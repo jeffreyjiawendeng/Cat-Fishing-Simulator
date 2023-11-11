@@ -1165,7 +1165,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   year: 0
   pauseScreen: {fileID: 335025360}
-  yearInSec: 1
+  yearInSec: 5
+  sTime: 0
   fishCount: 50
   catCount: 5
   yearWord: {fileID: 907993721}
