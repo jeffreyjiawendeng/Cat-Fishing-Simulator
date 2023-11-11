@@ -14,9 +14,9 @@ public class CatFisher : MonoBehaviour
     {
         population++;
         g = FindObjectOfType<GameController>().GetComponent<GameController>();
-        timeToFish = Random.Range(3, 10);
+        timeToFish = Random.Range(3, 6);
         birthYear = g.year;
-        deathYear = birthYear + (int)Random.Range(3, 5);
+        deathYear = birthYear + (int)Random.Range(8, 11);
     }
 
     void Update()
@@ -25,7 +25,7 @@ public class CatFisher : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        if (Mathf.Ceil(g.sTime) % timeToFish == 0)
+        if (g.sTime == timeToFish || g.sTime == timeToFish * 2 || g.sTime == timeToFish * 3 || g.sTime == timeToFish)
         {
             catchFish();
         }
