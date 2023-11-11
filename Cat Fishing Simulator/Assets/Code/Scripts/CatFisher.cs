@@ -26,7 +26,7 @@ public class CatFisher : MonoBehaviour
 
     void Update()
     {
-        if (Time.time > 5 * Random.Range(1, 2))
+        if (Time.time > lifeExpectancy * 20)
         {
             Destroy(this.gameObject);
         }
