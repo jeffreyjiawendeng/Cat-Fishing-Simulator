@@ -8,7 +8,11 @@ public class GameController : MonoBehaviour
     public int year;
     public GameObject pauseScreen;
     public int yearInSec = 20;
-    float sTime = 0;
+
+    
+
+    public float sTime = 0;
+
 
     public int fishCount = 50;
     public int catCount = 5;
