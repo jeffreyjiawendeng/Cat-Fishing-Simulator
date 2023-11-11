@@ -9,8 +9,6 @@ public class GameController : MonoBehaviour
     public GameObject pauseScreen;
     public int yearInSec = 20;
 
-    
-
     public float sTime = 0;
 
 
