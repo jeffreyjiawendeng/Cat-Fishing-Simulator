@@ -16,13 +16,13 @@ public class CatFisher : MonoBehaviour
         population++;
         g = FindObjectOfType<GameController>().GetComponent<GameController>();
         timeToFish = Random.Range(10, 15);
-        birthYear = GameController.year;
-        deathYear = birthYear + Random.Range(8, 10);
+        birthYear = g.year;
+        deathYear = birthYear + (int)Random.Range(8, 10);
     }
 
     void Update()
     {
-        if (g.year > deathYear)
+        if (g.year == deathYear)
         {
             Destroy(this.gameObject);
         }

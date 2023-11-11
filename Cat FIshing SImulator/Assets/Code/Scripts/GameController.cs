@@ -5,7 +5,7 @@ using TMPro;
 
 public class GameController : MonoBehaviour
 {
-    public static int year;
+    public int year;
     public GameObject pauseScreen;
     public int yearInSec = 20;
     public TextMeshProUGUI yearWord;
