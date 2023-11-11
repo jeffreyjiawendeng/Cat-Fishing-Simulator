@@ -33,6 +33,7 @@ public class CatFisher : MonoBehaviour
 
     public void catchFish()
     {
+        g.fishCaught();
         totalFishCatched++;
     }
 }

@@ -50,6 +50,12 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public void fishCaught()
+    {
+        fishCount--;
+    }
+
+
     public void newYear()
     {
         if (sTime >= yearInSec)
