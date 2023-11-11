@@ -7,26 +7,22 @@ public class CatFisher : MonoBehaviour
 {
     public static int totalFishCatched = 0;
     public static int population = 0;
-    //public GameController g;
+    public GameController g;
     private int timeToFish;
-    private int age;
-    private int lifeExpectancy;
+    private int birthYear;
+    private int deathYear;
     void Start()
     {
-        //g = FindObjectOfType<GameController>().GameController;
         population++;
+        g = FindObjectOfType<GameController>().GetComponent<GameController>();
         timeToFish = Random.Range(10, 15);
-        age = 0;
-        lifeExpectancy = Random.Range(8, 10);
-        for (int i = 0; i < population; i++)
-        {
-
-        }
+        birthYear = GameController.year;
+        deathYear = birthYear + Random.Range(8, 10);
     }
 
     void Update()
     {
-        if (Time.time > lifeExpectancy * 20)
+        if (g.year > deathYear)
         {
             Destroy(this.gameObject);
         }
