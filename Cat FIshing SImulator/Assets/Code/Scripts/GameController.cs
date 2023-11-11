@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour
     public GameObject pauseScreen;
     public int yearInSec = 20;
     public TextMeshProUGUI yearWord;
-    float sTime = 0;
+    public float sTime = 0;
 
     // Start is called before the first frame update
     void Start()
