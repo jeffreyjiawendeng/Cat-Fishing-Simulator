@@ -17,7 +17,7 @@ public class CatFisher : MonoBehaviour
     {
         population++;
         g = FindObjectOfType<GameController>().GetComponent<GameController>();
-        timeToFish = Random.Range(1, 4);
+        timeToFish = Random.Range(2, 6);
         birthYear = g.year;
         deathYear = birthYear + (int)Random.Range(8, 11);
         fishToReproduce = (int)Random.Range(1, 4);
