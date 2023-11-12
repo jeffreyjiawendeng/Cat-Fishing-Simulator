@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: -2789879601040681092}
-  maxIdleTime: 5
+  maxIdleTime: 20
   maxTravelDistance: 30
   speed: 12
 --- !u!195 &-2789879601040681092
