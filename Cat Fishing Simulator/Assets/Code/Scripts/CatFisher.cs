@@ -19,15 +19,21 @@ public class CatFisher : MonoBehaviour
         deathYear = birthYear + (int)Random.Range(8, 11);
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (g.year == deathYear)
         {
             Destroy(this.gameObject);
         }
+<<<<<<< Updated upstream
         if (g.sTime == timeToFish || g.sTime == timeToFish * 2 || g.sTime == timeToFish * 3 || g.sTime == timeToFish)
         {
             catchFish();
+=======
+        if (g.sTime == skillLevel || g.sTime == skillLevel * 2 || g.sTime == skillLevel * 3 || g.sTime == skillLevel * 4)
+        {
+            catchFish();                               
+>>>>>>> Stashed changes
         }
     }
 
