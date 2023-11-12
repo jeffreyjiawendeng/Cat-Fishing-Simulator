@@ -114,8 +114,12 @@ public class GameController : MonoBehaviour
                 catCount++;
             }
             fishbreeding();
-        }
 
+            if (Random.Range(0, 1) <= 0.125f)   // 1/8 chance to flood
+            {
+                StartFloodEvent();
+            }
+        }
         catCount = FindObjectsOfType<CatFisher>().Length;
         fishWord.text = fishCount.ToString();
         catWord.text = catCount.ToString();
@@ -140,4 +144,11 @@ public class GameController : MonoBehaviour
         fishCount += 7;
     }
         
+    private void StartFloodEvent()
+    {
+        fishCount += 50;
+        for (int i = 0; i < catCount / 4; i++)  // Removing 1/4 of cats
+            if(cats.Count > 0)
+                cats.RemoveAt(0);
+    }
 }

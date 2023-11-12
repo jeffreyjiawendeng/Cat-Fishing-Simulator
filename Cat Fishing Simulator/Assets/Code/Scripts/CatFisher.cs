@@ -20,7 +20,7 @@ public class CatFisher : MonoBehaviour
         timeToFish = Random.Range(2, 6);
         birthYear = g.year;
         deathYear = birthYear + (int)Random.Range(8, 11);
-        fishToReproduce = (int)Random.Range(1, 4);
+        fishToReproduce = (int)Random.Range(1, 3);
         fishCaught = 0;
         tries = 0;
         InvokeRepeating("catchFish", 0.0f, 1.0f);
