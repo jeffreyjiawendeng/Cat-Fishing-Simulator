@@ -39,7 +39,7 @@ public class CatFisher : MonoBehaviour
     public void catchFish()
     {
         tries++;
-        if (tries == timeToFish)
+        if (tries == timeToFish && g.fishCount > 0)
         {
             g.fishCaught();
             totalFishCatched++;
