@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.36298677, g: 0.56621295, b: 0.8437082, a: 1}
+  m_IndirectSpecularColor: {r: 0.36287606, g: 0.5661674, b: 0.8437139, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1434,11 +1434,79 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 55b45f0a5d131419382c9959914a36d2, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 55b45f0a5d131419382c9959914a36d2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 920671940}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 55b45f0a5d131419382c9959914a36d2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 920671939}
   m_SourcePrefab: {fileID: 100100000, guid: 55b45f0a5d131419382c9959914a36d2, type: 3}
+--- !u!1 &920671938 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 55b45f0a5d131419382c9959914a36d2, type: 3}
+  m_PrefabInstance: {fileID: 920671937}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &920671939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920671938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 53806c6d473d24888b10558370d7283f, type: 2}
+  m_BuildHeightMesh: 0
+--- !u!64 &920671940
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920671938}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1453043773871479701, guid: 55b45f0a5d131419382c9959914a36d2, type: 3}
 --- !u!1 &940596359
 GameObject:
   m_ObjectHideFlags: 0
@@ -1682,8 +1750,10 @@ MonoBehaviour:
   yearInSec: 5
   sTime: 0
   fishMultiplier: 1.4
+  spawner: {fileID: 0}
   fishCount: 50
   catCount: 5
+  cats: []
   yearWord: {fileID: 907993721}
   fishWord: {fileID: 1575110106}
   catWord: {fileID: 429810065}
