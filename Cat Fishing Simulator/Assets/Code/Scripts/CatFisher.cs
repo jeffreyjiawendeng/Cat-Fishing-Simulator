@@ -29,6 +29,7 @@ public class CatFisher : MonoBehaviour
         if (g.year == deathYear)
         {
             g.cats.Remove(this);
+            g.catCount--;
             Destroy(this.gameObject);
         }
     }

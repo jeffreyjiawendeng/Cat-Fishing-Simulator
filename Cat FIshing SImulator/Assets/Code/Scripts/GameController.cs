@@ -33,6 +33,7 @@ public class GameController : MonoBehaviour
         for (int i = 0; i < catCount; i++)
         {
             spawner.SpawnCat(35, 40);
+            catCount++;
         }
 
         pauseScreen.SetActive(false);
@@ -94,6 +95,7 @@ public class GameController : MonoBehaviour
                 }
                 x.timeToFish = Random.Range(2, 6);
                 x.fishCaught = 0;
+                catCount++;
             }
         }
 
