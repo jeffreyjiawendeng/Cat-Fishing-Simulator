@@ -23,6 +23,11 @@ public class CatMovement : MonoBehaviour
     private State state;
     private float idleTimer;
 
+    private void Awake()
+    {
+        agent = GetComponent<NavMeshAgent>();
+    }
+
     // Update is called once per frame
     void Update()
     {
