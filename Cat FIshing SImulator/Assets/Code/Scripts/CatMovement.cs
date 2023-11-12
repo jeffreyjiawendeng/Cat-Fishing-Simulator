@@ -54,17 +54,14 @@ public class CatMovement : MonoBehaviour
     // Aligning destination directly onto navmesh terrain to avoid bugs
     void SearchWalkPoint()
     {
-        print("searching");
         Vector3 location = Quaternion.AngleAxis(Random.Range(0, 360), Vector3.up) * Vector3.forward * Random.Range(0, maxTravelDistance);
         RaycastHit hit;
         if (Physics.Raycast(location + Vector3.down * 1000, transform.up, out hit) || Physics.Raycast(location + Vector3.up * 1000, -transform.up, out hit))
         {
-            print("hit:" + hit.collider.gameObject.tag);
             if (hit.collider.gameObject.tag.Equals("Ground"))
             {
                 agent.SetDestination(hit.point);
                 state = State.Moving;
-                print("found");
             }
         }
     }
