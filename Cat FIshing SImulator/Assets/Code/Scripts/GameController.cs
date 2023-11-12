@@ -93,8 +93,8 @@ public class GameController : MonoBehaviour
                 }
                 else 
                 {
-                    x.deathYear--;
-                    if (fishCount <= 1)
+                    x.deathYear-=2;
+                    if (fishCount <= catCount)
                         x.deathYear-=2;
                 }
                 x.timeToFish = Random.Range(2, 6);
