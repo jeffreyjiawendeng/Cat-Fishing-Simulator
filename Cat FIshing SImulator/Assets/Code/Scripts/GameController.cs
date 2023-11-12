@@ -39,7 +39,7 @@ public class GameController : MonoBehaviour
 
         pauseScreen.SetActive(false);
         gameOverScreen.SetActive(false);
-        yearWord.text = year.ToString();
+        yearWord.text = "Year : " + year.ToString();
     }
 
     // Update is called once per frame
@@ -83,12 +83,7 @@ public class GameController : MonoBehaviour
         {
             sTime = 0;
             year++;
-<<<<<<< Updated upstream
-            yearWord.text = year.ToString();
-            fishbreeding();
-=======
             yearWord.text = "Year" + year.ToString();
->>>>>>> Stashed changes
             var generationCount = 0;
             foreach (CatFisher x in cats)
             {
