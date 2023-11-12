@@ -8,8 +8,6 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [SerializeField]
-    private GameController controller;
-    [SerializeField]
     private GameObject cat;
 
     public void SpawnCat(float minDistance, float maxDistance)
@@ -21,10 +19,7 @@ public class Spawner : MonoBehaviour
         if (Physics.Raycast(location + Vector3.down * 1000, transform.up, out hit) || Physics.Raycast(location + Vector3.up * 1000, -transform.up, out hit))
         {
             if (hit.collider.gameObject.tag.Equals("Ground"))
-            {
-                var newCat = Instantiate(cat, hit.point, cat.transform.rotation);
-                newCat.GetComponent<CatFisher>().g = controller; // Cats created from prefab do not have the cat controller assigned yet
-            }
+                Instantiate(cat, hit.point, cat.transform.rotation);
             else if (minDistance > 0 && maxDistance > 0)    // Recursively spawning a cat if the raycast missed
                 SpawnCat(minDistance - 5, maxDistance - 5);
         }

@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6eba4283e62b49dcb76a42064d8db12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 300103724810968725}
+  agent: {fileID: 0}
   maxIdleTime: 5
   maxTravelDistance: 30
   speed: 15
