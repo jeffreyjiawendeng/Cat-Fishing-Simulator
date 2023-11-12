@@ -92,7 +92,6 @@ public class GameController : MonoBehaviour
             year++;
 
             yearWord.text = "Year : " + year.ToString();
-            fishbreeding();
 
             var generationCount = 0;
             foreach (CatFisher x in cats)
@@ -117,9 +116,8 @@ public class GameController : MonoBehaviour
             }
             fishbreeding();
 
-            if (Random.Range(0, 1.0f) <= 0.125f)   // 1/8 chance to flood
+            if (Random.Range(0f, 1f) <= 0.125f)   // 1/8 chance to flood
             {
-
                 StartFloodEvent();
             }
         }
