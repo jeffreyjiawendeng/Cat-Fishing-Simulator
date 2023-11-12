@@ -11,7 +11,7 @@ public class GameController : MonoBehaviour
     public int yearInSec = 20;
 
     public float sTime = 0;
-    public float fishMultiplier = 1.4f;
+    public float fishMultiplier = 2.0f;
 
     public Spawner spawner;
     public int fishCount = 50;
@@ -45,6 +45,7 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Mathf.Clamp(fishCount, 0, Mathf.Infinity);
         sTime += Time.deltaTime;
         newYear();
 
@@ -62,7 +63,7 @@ public class GameController : MonoBehaviour
             }
         }
 
-        if (fishCount <= 0 || catCount <= 0)
+        if (catCount <= 0)
         {
             gameOverScreen.SetActive(true);
             Time.timeScale = 0;
@@ -84,11 +85,12 @@ public class GameController : MonoBehaviour
             year++;
             yearWord.text = "Year" + year.ToString();
             fishbreeding();
+            var generationCount = 0;
             foreach (CatFisher x in cats)
             {
-                if (x.fishCaught >= 6)
+                if (x.fishCaught >= x.fishToReproduce)
                 {
-                    spawner.SpawnCat(35, 40);
+                    generationCount++;
                 }
                 else
                 {
@@ -96,6 +98,10 @@ public class GameController : MonoBehaviour
                 }
                 x.timeToFish = Random.Range(2, 6);
                 x.fishCaught = 0;
+            }
+            for (int i = 0; i < generationCount; i++)
+            {
+                spawner.SpawnCat(35, 40);
                 catCount++;
             }
         }
@@ -107,7 +113,10 @@ public class GameController : MonoBehaviour
 
     private void fishbreeding()
     {
-        fishCount += (int) (fishCount * fishMultiplier);
+        if (fishCount < 1)
+            fishCount += 5;
+        else 
+            fishCount = (int) (fishCount * fishMultiplier);
     }
         
 }
