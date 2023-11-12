@@ -51,16 +51,7 @@ public class GameController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (pauseScreen.activeSelf)
-            {
-                pauseScreen.SetActive(false);
-                Time.timeScale = 1;
-            }
-            else
-            {
-                pauseScreen.SetActive(true);
-                Time.timeScale = 0;
-            }
+            pause();
         }
 
         if (catCount <= 0)
@@ -68,6 +59,20 @@ public class GameController : MonoBehaviour
             gameOverScreen.SetActive(true);
             Time.timeScale = 0;
 
+        }
+    }
+
+    private void pause()
+    {
+        if (pauseScreen.activeSelf)
+        {
+            pauseScreen.SetActive(false);
+            Time.timeScale = 1;
+        }
+        else
+        {
+            pauseScreen.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 
@@ -83,7 +88,10 @@ public class GameController : MonoBehaviour
         {
             sTime = 0;
             year++;
-            yearWord.text = "Year" + year.ToString();
+
+            yearWord.text = "Year : " + year.ToString();
+            fishbreeding();
+
             var generationCount = 0;
             foreach (CatFisher x in cats)
             {
