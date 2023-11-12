@@ -128,5 +128,16 @@ public class GameController : MonoBehaviour
         else 
             fishCount = (int) (fishCount * fishMultiplier);
     }
+
+    public void addCat()
+    {
+        spawner.SpawnCat(35,40);
+        catCount++;
+    }
+
+    public void addFish()
+    {
+        fishCount += 7;
+    }
         
 }
