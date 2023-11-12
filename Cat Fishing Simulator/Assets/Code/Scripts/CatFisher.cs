@@ -7,14 +7,14 @@ public class CatFisher : MonoBehaviour
     public static int totalFishCatched = 0;
     public static int population = 0;
     public GameController g;
-    private float timeToFish;
+    private int skillLevel;
     private int birthYear;
     private int deathYear;
     void Start()
     {
         population++;
         g = FindObjectOfType<GameController>().GetComponent<GameController>();
-        timeToFish = Random.Range(3, 6);
+        skillLevel = Random.Range(2, 4);
         birthYear = g.year;
         deathYear = birthYear + (int)Random.Range(8, 11);
     }
@@ -25,10 +25,12 @@ public class CatFisher : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        if (g.sTime == timeToFish || g.sTime == timeToFish * 2 || g.sTime == timeToFish * 3 || g.sTime == timeToFish)
-        {
-            catchFish();
+        if (Random.Range(1, 1001) > 1001 - skillLevel) // YO JOSH THIS IS KIND OF A BS SOLUTION FOR NOW
+        {                                              // We kinda gotta change this method
+            catchFish();                               // :p
         }
+
+
     }
 
     public void catchFish()
