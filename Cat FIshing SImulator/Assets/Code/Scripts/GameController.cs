@@ -144,14 +144,22 @@ public class GameController : MonoBehaviour
     {
         fishCount += 7;
     }
+
+    public void flood()
+    {
+        StartFloodEvent();
+    }
         
     private void StartFloodEvent()
     {
-        print("FLOOD");
         pond.SetTrigger("Flood");
         fishCount += 50;
         for (int i = 0; i < catCount / 4; i++)  // Removing 1/4 of cats
-            if(cats.Count > 0)
+            if (cats.Count > 0)
+            {
+                var cat = cats[0];
                 cats.RemoveAt(0);
+                Destroy(cat.gameObject);
+            }
     }
 }
