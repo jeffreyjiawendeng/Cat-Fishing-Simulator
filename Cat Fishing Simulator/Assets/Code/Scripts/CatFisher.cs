@@ -7,16 +7,19 @@ public class CatFisher : MonoBehaviour
     public static int totalFishCatched = 0;
     public static int population = 0;
     public GameController g;
-    private float timeToFish;
+    private int timeToFish;
+    private int tries;
     private int birthYear;
     private int deathYear;
     void Start()
     {
         population++;
         g = FindObjectOfType<GameController>().GetComponent<GameController>();
-        timeToFish = Random.Range(3, 6);
+        timeToFish = Random.Range(1, 6);
         birthYear = g.year;
         deathYear = birthYear + (int)Random.Range(8, 11);
+        tries = 0;
+        InvokeRepeating("catchFish", 0.0f, 1.0f);
     }
 
     void FixedUpdate()
@@ -29,7 +32,13 @@ public class CatFisher : MonoBehaviour
 
     public void catchFish()
     {
-        g.fishCaught();
-        totalFishCatched++;
+        tries++;
+        if (tries == timeToFish)
+        {
+            g.fishCaught();
+            totalFishCatched++;
+            tries = 0;
+        }
+        
     }
 }
