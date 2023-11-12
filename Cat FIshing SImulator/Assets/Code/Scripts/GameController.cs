@@ -7,9 +7,11 @@ public class GameController : MonoBehaviour
 {
     public int year;
     public GameObject pauseScreen;
+    public GameObject gameOverScreen;
     public int yearInSec = 20;
 
     public float sTime = 0;
+    public float fishMultiplier = 1.4f;
 
 
     public int fishCount = 50;
@@ -26,6 +28,7 @@ public class GameController : MonoBehaviour
         catWord.text = catCount.ToString();
 
         pauseScreen.SetActive(false);
+        gameOverScreen.SetActive(false);
         yearWord.text = year.ToString();
     }
 
@@ -47,6 +50,13 @@ public class GameController : MonoBehaviour
                 pauseScreen.SetActive(true);
                 Time.timeScale = 0;
             }
+        }
+
+        if (fishCount <= 0 || catCount <= 0)
+        {
+            gameOverScreen.SetActive(true);
+            Time.timeScale = 0;
+
         }
     }
 
@@ -71,4 +81,10 @@ public class GameController : MonoBehaviour
         catWord.text = catCount.ToString();
 
     }
+
+    private void fishbreeding()
+    {
+        fishCount += (int) (fishCount * fishMultiplier);
+    }
+        
 }

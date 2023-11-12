@@ -1240,8 +1240,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   year: 0
   pauseScreen: {fileID: 335025360}
+  gameOverScreen: {fileID: 1402485288}
   yearInSec: 5
   sTime: 0
+  fishMultiplier: 1.4
   fishCount: 50
   catCount: 5
   yearWord: {fileID: 907993721}
