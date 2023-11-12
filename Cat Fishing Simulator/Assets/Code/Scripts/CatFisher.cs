@@ -26,7 +26,7 @@ public class CatFisher : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (g.year == deathYear)
+        if (g.year >= deathYear)
         {
             g.cats.Remove(this);
             g.catCount--;
