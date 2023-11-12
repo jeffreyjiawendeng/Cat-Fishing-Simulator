@@ -23,6 +23,8 @@ public class GameController : MonoBehaviour
     public TextMeshProUGUI fishWord;
     public TextMeshProUGUI catWord;
 
+    public Animator pond;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +38,7 @@ public class GameController : MonoBehaviour
             spawner.SpawnCat(35, 40);
             catCount++;
         }
-
+        
         pauseScreen.SetActive(false);
         gameOverScreen.SetActive(false);
         yearWord.text = "Year : " + year.ToString();
@@ -115,8 +117,9 @@ public class GameController : MonoBehaviour
             }
             fishbreeding();
 
-            if (Random.Range(0, 1) <= 0.125f)   // 1/8 chance to flood
+            if (Random.Range(0, 1.0f) <= 0.125f)   // 1/8 chance to flood
             {
+
                 StartFloodEvent();
             }
         }
@@ -146,6 +149,8 @@ public class GameController : MonoBehaviour
         
     private void StartFloodEvent()
     {
+        print("FLOOD");
+        pond.SetTrigger("Flood");
         fishCount += 50;
         for (int i = 0; i < catCount / 4; i++)  // Removing 1/4 of cats
             if(cats.Count > 0)
