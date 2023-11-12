@@ -41,11 +41,11 @@ public class TopDownCamera : MonoBehaviour
         }
 
         // Rotating Camera
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow) && camera.transform.localRotation.x * 150f >= -90f)
         {
             camera.transform.Rotate(new Vector3(-cameraSpeed * 3 * Time.deltaTime,0,0));
         }
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.DownArrow) && camera.transform.localRotation.x * 150f <= 90f)
         {
             camera.transform.Rotate(new Vector3(cameraSpeed * 3 * Time.deltaTime, 0, 0));
         }
