@@ -83,8 +83,12 @@ public class GameController : MonoBehaviour
         {
             sTime = 0;
             year++;
+<<<<<<< Updated upstream
             yearWord.text = year.ToString();
             fishbreeding();
+=======
+            yearWord.text = "Year" + year.ToString();
+>>>>>>> Stashed changes
             var generationCount = 0;
             foreach (CatFisher x in cats)
             {
@@ -92,9 +96,11 @@ public class GameController : MonoBehaviour
                 {
                     generationCount++;
                 }
-                else
+                else 
                 {
                     x.deathYear--;
+                    if (fishCount <= 1)
+                        x.deathYear-=2;
                 }
                 x.timeToFish = Random.Range(2, 6);
                 x.fishCaught = 0;
@@ -104,6 +110,7 @@ public class GameController : MonoBehaviour
                 spawner.SpawnCat(35, 40);
                 catCount++;
             }
+            fishbreeding();
         }
 
         catCount = FindObjectsOfType<CatFisher>().Length;
