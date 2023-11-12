@@ -63,6 +63,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7a460b39faf3845789a57f9e36863c90, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2357656118058197208}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7a460b39faf3845789a57f9e36863c90, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8409805194525920499}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7a460b39faf3845789a57f9e36863c90, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -2789879601040681092}
   m_SourcePrefab: {fileID: 100100000, guid: 7a460b39faf3845789a57f9e36863c90, type: 3}
 --- !u!1 &7240239514139498340 stripped
 GameObject:
@@ -82,3 +88,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   g: {fileID: 0}
+  timeToFish: 0
+  fishCaught: 0
+  deathYear: 0
+--- !u!114 &8409805194525920499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7240239514139498340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6eba4283e62b49dcb76a42064d8db12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: -2789879601040681092}
+  maxIdleTime: 5
+  maxTravelDistance: 30
+  speed: 12
+--- !u!195 &-2789879601040681092
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7240239514139498340}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0.7
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
