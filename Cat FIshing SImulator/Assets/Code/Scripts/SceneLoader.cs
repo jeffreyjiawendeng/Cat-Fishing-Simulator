@@ -29,6 +29,6 @@ public class SceneLoader : MonoBehaviour
 
     public void quid()
     {
-        //
+        Application.Quit(); 
     }
 }
