@@ -25,11 +25,6 @@ public class CatFisher : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-
-        if (g.sTime == timeToFish || g.sTime == timeToFish * 2 || g.sTime == timeToFish * 3 || g.sTime == timeToFish)
-        {
-            catchFish();
-        }
     }
 
     public void catchFish()
