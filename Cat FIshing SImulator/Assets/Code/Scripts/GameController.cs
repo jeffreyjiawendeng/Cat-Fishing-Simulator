@@ -11,7 +11,7 @@ public class GameController : MonoBehaviour
     public int yearInSec = 20;
 
     public float sTime = 0;
-    public float fishMultiplier = 2.0f;
+    public float fishMultiplier = 1.4f;
 
     public Spawner spawner;
     public int fishCount = 50;
@@ -117,8 +117,8 @@ public class GameController : MonoBehaviour
     {
         if (fishCount < 1)
             fishCount += 5;
-        else 
-            fishCount = (int) (fishCount * fishMultiplier);
+        else
+            fishCount += (int)Mathf.Log(fishCount, fishMultiplier);
     }
         
 }
