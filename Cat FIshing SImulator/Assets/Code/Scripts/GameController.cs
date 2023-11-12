@@ -72,14 +72,13 @@ public class GameController : MonoBehaviour
         {
             sTime = 0;
             year++;
-            yearWord.text = year.ToString();    
-
+            yearWord.text = year.ToString();
+            fishbreeding();
         }
 
         catCount = FindObjectsOfType<CatFisher>().Length;
         fishWord.text = fishCount.ToString();
         catWord.text = catCount.ToString();
-
     }
 
     private void fishbreeding()
