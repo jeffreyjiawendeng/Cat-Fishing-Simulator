@@ -24,6 +24,7 @@ public class Spawner : MonoBehaviour
             {
                 var newCat = Instantiate(cat, hit.point, cat.transform.rotation);
                 newCat.GetComponent<CatFisher>().g = controller; // Cats instantiated from prefab have g as null by default
+                controller.cats.Add(newCat.GetComponent<CatFisher>());
             }
             else if (minDistance > 0 && maxDistance > 0)    // Recursively spawning a cat if the raycast missed
                 SpawnCat(minDistance - 5, maxDistance - 5);

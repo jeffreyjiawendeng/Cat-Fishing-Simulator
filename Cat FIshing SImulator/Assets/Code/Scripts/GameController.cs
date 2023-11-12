@@ -13,9 +13,11 @@ public class GameController : MonoBehaviour
     public float sTime = 0;
     public float fishMultiplier = 1.4f;
 
-
+    public Spawner spawner;
     public int fishCount = 50;
     public int catCount = 5;
+
+    public List<CatFisher> cats = new List<CatFisher>();
 
     public TextMeshProUGUI yearWord;
     public TextMeshProUGUI fishWord;
@@ -26,6 +28,12 @@ public class GameController : MonoBehaviour
     {
         fishWord.text = fishCount.ToString();
         catWord.text = catCount.ToString();
+        spawner = GetComponent<Spawner>();
+
+        for (int i = 0; i < catCount; i++)
+        {
+            spawner.SpawnCat(35, 40);
+        }
 
         pauseScreen.SetActive(false);
         gameOverScreen.SetActive(false);
@@ -74,6 +82,19 @@ public class GameController : MonoBehaviour
             year++;
             yearWord.text = year.ToString();
             fishbreeding();
+            foreach (CatFisher x in cats)
+            {
+                if (x.fishCaught >= 6)
+                {
+                    spawner.SpawnCat(35, 40);
+                }
+                else
+                {
+                    x.deathYear--;
+                }
+                x.timeToFish = Random.Range(2, 6);
+                x.fishCaught = 0;
+            }
         }
 
         catCount = FindObjectsOfType<CatFisher>().Length;
