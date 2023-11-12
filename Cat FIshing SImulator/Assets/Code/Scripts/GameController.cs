@@ -30,7 +30,8 @@ public class GameController : MonoBehaviour
         catWord.text = catCount.ToString();
         spawner = GetComponent<Spawner>();
 
-        for (int i = 0; i < catCount; i++)
+        var temp = catCount;
+        for (int i = 0; i < temp; i++)
         {
             spawner.SpawnCat(35, 40);
             catCount++;

@@ -1725,6 +1725,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1103665437}
   - component: {fileID: 1103665436}
+  - component: {fileID: 1103665438}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -1750,7 +1751,7 @@ MonoBehaviour:
   yearInSec: 5
   sTime: 0
   fishMultiplier: 1.4
-  spawner: {fileID: 0}
+  spawner: {fileID: 1103665438}
   fishCount: 50
   catCount: 5
   cats: []
@@ -1772,6 +1773,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1103665438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103665435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64f60e576a41c463f9258a3e8e10b328, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 1103665436}
+  cat: {fileID: 7240239514139498340, guid: 6bd7e954e5a494469bbe615a921d48a9, type: 3}
 --- !u!1 &1158960636
 GameObject:
   m_ObjectHideFlags: 0
